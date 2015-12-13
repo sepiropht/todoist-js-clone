@@ -8,29 +8,35 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
           <script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
     <body>
+          <header>
+            <h1>TodoApp</h1>
+             <ul>
+                 <li><a href="#"></a></li>
+                 <li><a href="#"><i class="fa fa-plus"></i> </a></li>
+                 <li><a href="#"> <i class="fa fa-bell-o"></i></a> </li>
+                 <li><a  href="#"> <i class="fa fa-heart-o"></i>  200</a></li>
+                 <li><a href="#"> <i class="fa fa-asterisk"></i></a> </li>
+             </ul>
+       </header>
 
-      <div class="container-fluid">
+      <div class="container">
          
     <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="page-header">
-            <h1>TodoApp</h1>
-             <div class="form-group">
-                  <input class="pull-right" type="text" ng-model='handle' placeholder="your Name">
-                  </div>
-       </div>
+    
        
              <div class="row">
                
                 <section class="col-lg-4">
                     <ul>
-                        <li><a href="#/messageries">Messageries</a></li>
-                        <li><a href="#/today">Aujourd'hui</a></li>
-                        <li><a href="#/nextDays">7 prochains jours</a></li>                          
+                        <li><a href="#/messageries">Messagerie</a></li>
+                        <li><a href="#/today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
+                        <li><a href="#/nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>                          
                     </ul>
                 </section>
-                 <div ng-view></div>
+                 <div class="col-lg-8" ng-view></div>
                  
          </div>
      </div>   

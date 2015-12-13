@@ -27,7 +27,7 @@ myApp.controller('todoController',['$scope', function($scope){
                   {title:'dormir',
                    priority:'list-group-item-warning'
                   },
-                  {title:'baiser',
+                  {title:'learn angular',
                    priority:'list-group-item-danger'
                    }];
     
