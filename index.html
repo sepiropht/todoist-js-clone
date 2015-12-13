@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+          <script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+    </head>
+    <body>
+
+      <div class="container-fluid">
+         
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="page-header">
+            <h1>TodoApp</h1>
+             <div class="form-group">
+                  <input class="pull-right" type="text" ng-model='handle' placeholder="your Name">
+                  </div>
+       </div>
+       
+             <div class="row">
+               
+                <section class="col-lg-4">
+                    <ul>
+                        <li><a href="#/messageries">Messageries</a></li>
+                        <li><a href="#/today">Aujourd'hui</a></li>
+                        <li><a href="#/nextDays">7 prochains jours</a></li>                          
+                    </ul>
+                </section>
+                 <div ng-view></div>
+                 
+         </div>
+     </div>   
+     <script src="js/app.js"></script> 
+
+    </body>
+</html>
