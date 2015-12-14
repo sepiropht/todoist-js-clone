@@ -1,72 +1,36 @@
-var myApp = angular.module('todo',['ngRoute'])
+var routerApp = angular.module('todo', ['ui.router']);
 
-myApp.config(function ($routeProvider){
+routerApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $routeProvider
-    .when('/',{
+    $urlRouterProvider.otherwise('/');
+    
+    $stateProvider
+    .state('/',{
          templateUrl:'pages/main.html',
           controller:'todoController'
           })
-    .when('/today',{
+    .state('today',{
         templateUrl:'pages/today.html',
         controller:'todayController'
     })
-     .when('/nextDays',{
+     .state('nextDays',{
         templateUrl:'pages/nextDays.html',
         controller:'nDayController'
     })
+     .state('projets',{
+        templateUrl:'pages/projets.html',
+        controller:'projetsController'
+    })
+       .state('etiquettes',{
+        templateUrl:'pages/etiquettes.html',
+        controller:'tagsController'
+    })
+       .state('filtres',{
+        templateUrl:'pages/filtres.html',
+        controller:'filtresController'
+    })
+    
 });
 
-myApp.controller('todoController',['$scope', function($scope){
-   
-    $scope.handle='';
-    
-    $scope.tasks=[{title:'manger',
-                   priority:'list-group-item-info'
-                  },
-                  {title:'dormir',
-                   priority:'list-group-item-warning'
-                  },
-                  {title:'learn angular',
-                   priority:'list-group-item-danger'
-                   }];
-    
-    
-    $scope.addTask = function () {
-        $scope.tasks.push({title:$scope.task,
-                           priority:$scope.priority});
-         
-    }
-    $scope.removeTask=function(task)
-    {
-        var newTasks=[];
-        
-        for(var i=0;i< $scope.tasks.length;i++)
-          {
-              console.log(task,$scope.tasks[i].title)
-              
-              if(task!==$scope.tasks[i].title)
-              {
-                 newTasks.push($scope.tasks[i]);
-              }
-          }
-     
-         $scope.tasks=newTasks;
-          console.log($scope.tasks);
-    }
-  
-  
-}]);
-myApp.controller('todayController',['$scope', function($scope)
-                                    {
-                                        $scope.title= 'Aujourdhui';
-                                    }]);
-myApp.controller('nDayController',['$scope', function($scope)
-                                    {
-                                        $scope.title= '7 prochains jours';
-                                    }]);
-  var injection = function (firstname,name,password,avatar){
-        return 'jane Doe';
-    }
- console.log(angular.injector().annotate(injection));
+
           

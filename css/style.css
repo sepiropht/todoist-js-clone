@@ -14,6 +14,7 @@ header {
     height: 60px;
     box-shadow: 5px 5px 5px #888888;
     position :relative;
+    color:white;
 
    }
 header ul {
@@ -31,10 +32,28 @@ header li{
 header ul li a{
     text-decoration: none;
     font-size:1.5em;
+    color:white;
     
 }
+header a img {
+    width: 40px;
+    position:absolute;
+    top:28px;
+}
 
-section ul a{
+section ul a {
     text-decoration: none;
     color:gray;
  }
+section ul li{
+    padding-top:15px
+}
+#task-tunning ul
+{
+    border-bottom: gray solid 1px; 
+}
+#task-tunning ul li
+{
+    display: inline-block;
+   
+}

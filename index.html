@@ -6,20 +6,26 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
-          <script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+          <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+          
+       
+          
     </head>
     <body>
           <header>
-            <h1>TodoApp</h1>
+            <div class="container">
+            <a ui-sref="today"><img  src="/img/Todoist-new-app-logo.png" alt="logo"></a>
              <ul>
                  <li><a href="#"></a></li>
                  <li><a href="#"><i class="fa fa-plus"></i> </a></li>
                  <li><a href="#"> <i class="fa fa-bell-o"></i></a> </li>
-                 <li><a  href="#"> <i class="fa fa-heart-o"></i>  200</a></li>
+                 <li><a href="#"> <i class="fa fa-heart-o"></i> 200</a></li>
                  <li><a href="#"> <i class="fa fa-asterisk"></i></a> </li>
              </ul>
+             
+              </div>
        </header>
 
       <div class="container">
@@ -31,16 +37,32 @@
                
                 <section class="col-lg-4">
                     <ul>
-                        <li><a href="#/messageries">Messagerie</a></li>
-                        <li><a href="#/today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
-                        <li><a href="#/nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>                          
+                        <li><a ui-sref="/">Messagerie</a></li>
+                        <li><a ui-sref="today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
+                        <li><a ui-sref="nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>                          
                     </ul>
+                      <section id="task-tunning">
+                    <ul>
+                       <li><a ui-sref="projets">Projets</a></li>
+                       <li><a ui-sref="etiquettes">Etiquettes</a></li>
+                       <li><a ui-sref="filtres">Filtres</a></li>
+                    </ul>
+                    <div ng-view></div>            
+                             
                 </section>
-                 <div class="col-lg-8" ng-view></div>
+                </section>
+                
+              
+                 <div class="col-lg-8" ui-view></div>
                  
          </div>
      </div>   
      <script src="js/app.js"></script> 
+    <script src="js/controllers/todoController.js"></script>
+    <script src="js/controllers/nDayController.js"></script> 
+    <script src="js/controllers/projetsController.js"></script> 
+    <script src="js/controllers/todayController.js"></script>
+    <script src="js/controllers/filterController.js"></script> 
 
     </body>
 </html>
