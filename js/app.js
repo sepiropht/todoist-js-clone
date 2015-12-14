@@ -22,12 +22,21 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         controller:'projetsController'
     })
        .state('etiquettes',{
-        templateUrl:'pages/etiquettes.html',
+        templateurl:'pages/etiquettes.html',
         controller:'tagsController'
     })
        .state('filtres',{
-        templateUrl:'pages/filtres.html',
-        controller:'filtresController'
+        url:'filtres',
+        view: {
+            
+          '': { templateUrl:'index.html'
+              },
+        
+              'columnFiltre@filtres':{ template :'pages/filtre.html',
+               controller:'filtresController'
+              }
+        
+    }
     })
     
 });

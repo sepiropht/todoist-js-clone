@@ -1,41 +1,19 @@
 angular.module('todo')
 .controller('todoController',todoControlller);
-function todoControlller($scope){
+function todoControlller($scope,tasks){
    
     $scope.handle='';
     
-    $scope.tasks=[{title:'manger',
-                   priority:'list-group-item-info'
-                  },
-                  {title:'dormir',
-                   priority:'list-group-item-warning'
-                  },
-                  {title:'learn angular',
-                   priority:'list-group-item-danger'
-                   }];
+    $scope.tasks= tasks.getTasks();;
     
     
-    $scope.addTask = function () {
-        $scope.tasks.push({title:$scope.task,
-                           priority:$scope.priority});
-         
+    $scope.addTask =  function () {
+        tasks.addTask($scope.task,$scope.priority);
     }
-    $scope.removeTask=function(task)
+    
+    $scope.removeTask=function(taskTitle)
     {
-        var newTasks=[];
-        
-        for(var i=0;i< $scope.tasks.length;i++)
-          {
-              console.log(task,$scope.tasks[i].title)
-              
-              if(task!==$scope.tasks[i].title)
-              {
-                 newTasks.push($scope.tasks[i]);
-              }
-          }
-     
-         $scope.tasks=newTasks;
-          console.log($scope.tasks);
+        tasks.removeTask(taskTitle);
     }
   
   

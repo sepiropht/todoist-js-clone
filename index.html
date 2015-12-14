@@ -16,7 +16,7 @@
     <body>
           <header>
             <div class="container">
-            <a ui-sref="today"><img  src="/img/Todoist-new-app-logo.png" alt="logo"></a>
+            <a ui-sref="today"><img  src="/img/logo_todoist_schema.png" alt="logo"></a>
              <ul>
                  <li><a href="#"></a></li>
                  <li><a href="#"><i class="fa fa-plus"></i> </a></li>
@@ -47,7 +47,7 @@
                        <li><a ui-sref="etiquettes">Etiquettes</a></li>
                        <li><a ui-sref="filtres">Filtres</a></li>
                     </ul>
-                    <div ng-view></div>            
+                    <div ui-view="columnFiltre"></div>            
                              
                 </section>
                 </section>
@@ -63,6 +63,7 @@
     <script src="js/controllers/projetsController.js"></script> 
     <script src="js/controllers/todayController.js"></script>
     <script src="js/controllers/filterController.js"></script> 
+    <script src="js/services/task.js"></script>
 
     </body>
 </html>
