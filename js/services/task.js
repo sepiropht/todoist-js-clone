@@ -24,7 +24,7 @@ angular.module('todo')
         var newTasks=[];
           console.log("avant function");
         console.log(self.tasks);
-        for(var i=0;i< self.tasks.length;i++)
+        for(var i=0; i< self.tasks.length;i++)
           {
               console.log(taskTitle,self.tasks[i].title)
               
