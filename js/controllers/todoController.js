@@ -13,7 +13,7 @@ function todoControlller($scope,tasks){
     
     $scope.removeTask=function(taskTitle)
     {
-        $scope.tasks=tasks.removeTask(taskTitle);
+        $scope.tasks = tasks.removeTask(taskTitle);
         
     }
   
