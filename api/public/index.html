@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="todo">
     <head>
+        <base href="/">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
@@ -9,61 +10,31 @@
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
           <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-          
-       
-          
+
+
+
     </head>
     <body>
-          <header>
-            <div class="container">
-            <a ui-sref="today"><img  src="/img/logo_todoist_schema.png" alt="logo"></a>
-             <ul>
-                 <li><a href="#"></a></li>
-                 <li><a href="#"><i class="fa fa-plus"></i> </a></li>
-                 <li><a href="#"> <i class="fa fa-bell-o"></i></a> </li>
-                 <li><a href="#"> <i class="fa fa-heart-o"></i> 200</a></li>
-                 <li><a href="#"> <i class="fa fa-asterisk"></i></a> </li>
-             </ul>
-             
-              </div>
-       </header>
+      <main class="container">
+            <div ui-view></div>
+      </main>
 
-      <div class="container">
-         
-    <!-- Brand and toggle get grouped for better mobile display -->
-    
-       
-             <div class="row">
-               
-                <section class="col-lg-4">
-                    <ul>
-                        <li><a ui-sref="/">Messagerie</a></li>
-                        <li><a ui-sref="today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
-                        <li><a ui-sref="nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>                          
-                    </ul>
-                      <section id="task-tunning">
-                        <ul>
-                           <li><a ui-sref="projets">Projets</a></li>
-                           <li><a ui-sref="etiquettes">Etiquettes</a></li>
-                           <li><a ui-sref="filtres">Filtres</a></li>
-                        </ul>
-                    <div ui-view="columnFiltre"></div>            
-                             
-                    </section>
-                </section>
-                
-              
-                 <div class="col-lg-8" ui-view></div>
-                 
-         </div>
-     </div>   
-    <script src="js/app.js"></script> 
-    <script src="js/controllers/todoController.js"></script>
-    <script src="js/controllers/nDayController.js"></script> 
-    <script src="js/controllers/projetsController.js"></script> 
+
+
+
+
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/nDayController.js"></script>
+    <script src="js/controllers/projetsController.js"></script>
     <script src="js/controllers/todayController.js"></script>
-    <script src="js/controllers/filterController.js"></script> 
+    <script src="js/controllers/filterController.js"></script>
     <script src="js/services/task.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/login.route.js"></script>
+    <script src="app/login/login.service.js"></script>
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main.route.js"></script>
 
     </body>
 </html>

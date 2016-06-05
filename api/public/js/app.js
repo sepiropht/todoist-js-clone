@@ -1,11 +1,15 @@
 var routerApp = angular.module('todo', ['ui.router']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/');
-    
+
+    $urlRouterProvider.otherwise('/home');
+
     $stateProvider
-    .state('/',{
+    .state('home',{
+         url: '/home',
+         templateUrl:'app/home.html',
+          })
+    .state('/main',{
          templateUrl:'pages/main.html',
           controller:'todoController'
           })
@@ -28,18 +32,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
        .state('filtres',{
         url:'filtres',
         view: {
-            
+
           '': { templateUrl:'index.html'
               },
-        
+
               'columnFiltre@filtres':{ template :'pages/filtre.html',
                controller:'filtresController'
               }
-        
+
     }
     })
-    
+
 });
-
-
-          

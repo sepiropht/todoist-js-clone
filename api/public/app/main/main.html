@@ -1,0 +1,40 @@
+<header>
+            <div class="container">
+            <a ui-sref="today"><img  src="/img/logo_todoist_schema.png" alt="logo"></a>
+             <ul>
+                 <li><a href="#"></a></li>
+                 <li><a href="#"><i class="fa fa-plus"></i> </a></li>
+                 <li><a href="#"> <i class="fa fa-bell-o"></i></a> </li>
+                 <li><a href="#"> <i class="fa fa-heart-o"></i> 200</a></li>
+                 <li><a href="#"> <i class="fa fa-asterisk"></i></a> </li>
+             </ul>
+
+              </div>
+       </header>
+
+      <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+             <div class="row">
+
+                <section class="col-lg-4">
+                    <ul>
+                        <li><a ui-sref="main">Messagerie</a></li>
+                        <li><a ui-sref="today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
+                        <li><a ui-sref="nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>
+                    </ul>
+                      <section id="task-tunning">
+                        <ul>
+                           <li><a ui-sref="projets">Projets</a></li>
+                           <li><a ui-sref="etiquettes">Etiquettes</a></li>
+                           <li><a ui-sref="filtres">Filtres</a></li>
+                        </ul>
+                    <div ui-view="columnFiltre"></div>
+
+                    </section>
+                </section>
+
+
+                 <div class="col-lg-8" ui-view></div>
