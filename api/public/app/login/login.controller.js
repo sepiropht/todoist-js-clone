@@ -10,8 +10,9 @@
         vm.doLogin = doLogin;
         vm.doLogout = logout;
 
-        $rootScope.$on('$routeChangeStart', function() {
+        $rootScope.$on('$stateChangeStart', function() {
             if (vm.loggedIn) {
+               debugger;
                 LoginService.getUser()
                     .then(function(data) {
                         vm.user = data.data
@@ -25,8 +26,6 @@
         }
 
         function doLogin() {
-            debugger;
-            console.log('yeah');
             vm.processing = true;
             vm.error = '';
             LoginService.login(vm.loginData.username, vm.loginData.password)
@@ -35,7 +34,6 @@
                     LoginService.getUser()
                         .then(function(data) {
                             vm.user = data.data;
-                            console.log(data);
                         });
                     if (data.success) {
                         $state.go('/main');
