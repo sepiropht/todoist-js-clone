@@ -25,6 +25,10 @@ app.use(express.static(__dirname +'/public'));
 var api = require('./app/routes/api')(app, express);
 app.use('/api', api);
 
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/bower_components', express.static(__dirname + '/../bower_components'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/partials', express.static(__dirname + '/partials'));
 app.get('*', function(req,res) {
   res.sendFile(__dirname +'/public/index.html');
 })

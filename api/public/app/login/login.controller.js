@@ -12,7 +12,7 @@
 
         $rootScope.$on('$stateChangeStart', function() {
             if (vm.loggedIn) {
-               debugger;
+
                 LoginService.getUser()
                     .then(function(data) {
                         vm.user = data.data
@@ -37,8 +37,10 @@
                         });
                     if (data.success) {
                         $state.go('/main');
+
                     } else {
                         vm.error = data.message;
+
                     }
                 });
 
