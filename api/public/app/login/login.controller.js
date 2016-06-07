@@ -36,7 +36,7 @@
                             vm.user = data.data;
                         });
                     if (data.success) {
-                        $state.go('/main');
+                        $state.go('main');
 
                     } else {
                         vm.error = data.message;

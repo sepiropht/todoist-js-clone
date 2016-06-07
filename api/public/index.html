@@ -13,7 +13,7 @@
 
 
     </head>
-    <body>
+    <body ng-controller="MainController as vm">
       <header>
         <div class="navbar navbar-default">
           <div class="container">
@@ -22,7 +22,8 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
               <li ng-if="!vm.isLoggedIn"><a ui-sref="login">Login</a></li>
-                <li ng-if="!vm.isLoggedIn"><a ui-sref="signup">Signup</a></li>
+              <li ng-if="!vm.isLoggedIn"><a ui-sref="signup">Signup</a></li>
+              <li ng-if="vm.isLoggedIn" ng-click='vm.logout()'>Logout</li>
 
             </ul>
           </div>
@@ -38,10 +39,6 @@
 
 
     <script src="js/app.js"></script>
-    <script src="js/controllers/nDayController.js"></script>
-    <script src="js/controllers/projetsController.js"></script>
-    <script src="js/controllers/todayController.js"></script>
-    <script src="js/controllers/filterController.js"></script>
     <script src="js/services/task.js"></script>
     <script src="app/login/login.controller.js"></script>
     <script src="app/login/login.route.js"></script>

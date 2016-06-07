@@ -7,7 +7,7 @@
 
 
 
-    function LoginService($http, $q, AuthToken) {
+    function LoginService($http, $q, AuthToken,$state) {
 
         var authFactory = {}
 
@@ -23,13 +23,14 @@
         }
         authFactory.logout = function() {
             AuthToken.setToken();
+            $state.go('login');
         }
 
         authFactory.isLoggedIn = function() {
-            if (AuthToken.getToken())
+            if (AuthToken.getToken()) {
                 return true;
-            else
-                return false;
+            }
+            return false;
         }
 
         authFactory.getUser = function() {
@@ -58,11 +59,11 @@
 
     }
 
-    function AuthInterceptor($q, $state, Authoken) {
+    function AuthInterceptor($q, $injector, AuthToken) {
       var interceptorFactory = {};
 
       interceptorFactory.request = function(config) {
-        var token = Authoken.getToken();
+        var token = AuthToken.getToken();
         if (token) {
           config.headers['x-access-token']= token;
         }
@@ -71,7 +72,7 @@
 
       interceptorFactory.responseError = function (response) {
         if(response.status == 403)
-          $state.go('login');
+        //  $injector.get('$state').go('/login');
         return $q.reject(response);
       }
       return  interceptorFactory;

@@ -1,21 +1,23 @@
 angular.module('todo')
-.controller('todoController',todoControlller);
-function todoControlller($scope,tasks){
-   
-    $scope.handle='';
-    
-    $scope.tasks= tasks.getTasks();;
-    
-    
-    $scope.addTask =  function () {
-        tasks.addTask($scope.task,$scope.priority);
+.controller('TodoController',TodoControlller);
+function TodoControlller($scope,tasks){
+  debugger;
+    var vm = this;
+    vm.handle='';
+    vm.priority = 'Cool';
+    vm.tasks= tasks.getTasks();;
+
+
+    vm.addTask =  function (task) {
+      debugger;
+        tasks.addTask(task,vm.priority);
     }
-    
-    $scope.removeTask=function(taskTitle)
+
+    vm.removeTask=function(taskTitle)
     {
-        $scope.tasks = tasks.removeTask(taskTitle);
-        
+        vm.tasks = tasks.removeTask(taskTitle);
+
     }
-  
-  
+
+
 };

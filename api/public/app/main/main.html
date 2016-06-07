@@ -1,40 +1,19 @@
-<header>
-            <div class="container">
-            <a ui-sref="today"><img  src="/img/logo_todoist_schema.png" alt="logo"></a>
-             <ul>
-                 <li><a href="#"></a></li>
-                 <li><a href="#"><i class="fa fa-plus"></i> </a></li>
-                 <li><a href="#"> <i class="fa fa-bell-o"></i></a> </li>
-                 <li><a href="#"> <i class="fa fa-heart-o"></i> 200</a></li>
-                 <li><a href="#"> <i class="fa fa-asterisk"></i></a> </li>
+<section class="col-lg-8">
+                      <ul class="list-group">
+                    <li class="list-group-item" ng-class='task.priority' ng-repeat="task in tasks" >{{task.title}} <a href="#" ng-click="vm.removeTask(task.title)">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer cettte Tâche</a></li>
              </ul>
 
-              </div>
-       </header>
-
-      <div class="container">
-
-    <!-- Brand and toggle get grouped for better mobile display -->
-
-
-             <div class="row">
-
-                <section class="col-lg-4">
-                    <ul>
-                        <li><a ui-sref="main">Messagerie</a></li>
-                        <li><a ui-sref="today"><i class="fa fa-calendar-o"></i> Aujourd'hui</a></li>
-                        <li><a ui-sref="nextDays"> <i class="fa fa-calendar-check-o"></i> 7 prochains jours</a></li>
-                    </ul>
-                      <section id="task-tunning">
+            <form class="navbar-form navbar-left">
+                 <div class="form-group">
                         <ul>
-                           <li><a ui-sref="projets">Projets</a></li>
-                           <li><a ui-sref="etiquettes">Etiquettes</a></li>
-                           <li><a ui-sref="filtres">Filtres</a></li>
-                        </ul>
-                    <div ui-view="columnFiltre"></div>
+                         <li>Add task : <input type="text" ng-model = 'task'> <a href="#" class="btn btn-default" ng-click="vm.addTask(task)">Ajouter Tâche</a> </li>
+                         <li>
 
-                    </section>
-                </section>
+         <input type="radio" ng-model='vm.priority' value='list-group-item-sucess'>Cool
+          <input type="radio" ng-model='vm.priority' value='list-group-item-warning'>Pressant
+           <input type="radio" ng-model='vm.priority' value='list-group-item-danger'>Urgent</li>
+          </ul>
+           </div>
 
-
-                 <div class="col-lg-8" ui-view></div>
+           </form>
+           </section>

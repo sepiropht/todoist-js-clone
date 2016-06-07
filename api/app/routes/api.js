@@ -23,13 +23,15 @@ module.exports = function(app, express) {
             username: req.body.username,
             password: req.body.password
         });
+        var token = createToken(user);
         user.save(function(err) {
             if (err) {
                 res.send(err);
                 return;
             }
             res.json({
-                message: 'User has been created!'
+                message: 'User has been created!',
+                token: token
             });
         })
     });
@@ -65,6 +67,8 @@ module.exports = function(app, express) {
                     var token = createToken(user);
                     res.json({
                         success: true,
+                        name: user.name,
+                        username: user.username,
                         message: 'Successfuly login!',
                         token: token
                     });
