@@ -1,3 +1,3 @@
 [todoist-js-clone]
 This app is an angular todo app
-To try it : http://sepiropht.freeboxos.fr/4000/#/
+To try it : http://sepiropht.freeboxos.fr:4000
