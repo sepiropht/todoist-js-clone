@@ -4,15 +4,7 @@ angular.module('todo')
 
     var self=this;
 
-    this.tasks=[{title:'manger',
-                   priority:'list-group-item-info'
-                  },
-                  {title:'dormir',
-                   priority:'list-group-item-warning'
-                  },
-                  {title:'learn angular',
-                   priority:'list-group-item-danger'
-                   }];
+    this.tasks=[];
 
      this.addTask = function (title,priority) {
         self.tasks.push({title:title,

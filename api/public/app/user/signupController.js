@@ -14,9 +14,9 @@
            //ToastService.showSuccess('User Create!');
            vm.userData = {};
            vm.message = response.data.message;
-           
+
            $window.localStorage.setItem('token',response.data.token);
-           $state.go('/main');
+           $state.go('main');
          })
     }
 

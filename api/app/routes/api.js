@@ -7,7 +7,7 @@ var Story = require('../models/story');
 
 function createToken(user) {
     var token = jsonwebtoken.sign({
-        _id: user._id,
+        id: user._id,
         name: user.name,
         username: user.username
     }, secretKey, {
@@ -105,7 +105,9 @@ module.exports = function(app, express) {
         .post(function(req, res) {
             var story = new Story({
                 creator: req.decoded.id,
-                content: req.body.content
+                title:   req.body.title,
+                priority: req.body.priority
+
             })
             story.save(function(err) {
                 if (err) {
@@ -117,8 +119,8 @@ module.exports = function(app, express) {
                 });
             });
         })
-
     .get(function(req, res) {
+      console.log(req.decoded.id);
         Story.find({
             creator: req.decoded.id
         }, function(err, stories) {

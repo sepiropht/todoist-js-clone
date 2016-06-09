@@ -6,7 +6,8 @@ var StorySchema = new Schema( {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  content: String,
+  title: String,
+  priority:String,
   created: {
     type: Date,
     defauly: Date.now
