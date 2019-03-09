@@ -9,7 +9,7 @@
     "test:precommit": "npm test"
   },
   "lint-staged": {
-    "**/*.{ts, tsx, js,jsx,json,css,scss}": [
+    "**/*.{ts,tsx,js,jsx,json,css,scss}": [
       "prettier --write",
       "git add"
     ]
