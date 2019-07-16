@@ -1,4 +1,4 @@
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zeit/next.js/tree/master/examples/with-ts-node)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zeit/next.js/tree/master/examples/with-ts-node) [![Greenkeeper badge](https://badges.greenkeeper.io/sepiropht/todoist-js-clone.svg)](https://greenkeeper.io/)
 
 # Custom server with fully TypeScript + ts-node example (without babel and tsc), require next js 7+
 
